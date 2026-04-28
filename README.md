@@ -6,14 +6,26 @@ Use it when you explicitly want the agent to stop over-planning and directly exe
 
 ## Install
 
-Copy `SKILL.md` into your agent's skill directory, for example:
+Claude Code one-liner:
+
+```bash
+mkdir -p ~/.claude/skills/just && curl -fsSL https://raw.githubusercontent.com/FFatTiger/just-skill/main/SKILL.md -o ~/.claude/skills/just/SKILL.md
+```
+
+Generic one-liner with a custom skill root:
+
+```bash
+INSTALL_DIR="${AGENT_SKILLS_DIR:-$HOME/.claude/skills}/just"; mkdir -p "$INSTALL_DIR" && curl -fsSL https://raw.githubusercontent.com/FFatTiger/just-skill/main/SKILL.md -o "$INSTALL_DIR/SKILL.md"
+```
+
+Manual install:
 
 ```bash
 mkdir -p ~/.claude/skills/just
 cp SKILL.md ~/.claude/skills/just/SKILL.md
 ```
 
-For other agent runtimes, place the file wherever that runtime loads Agent Skills.
+For other agent runtimes, set `AGENT_SKILLS_DIR` or place the file wherever that runtime loads Agent Skills.
 
 ## Intent
 
