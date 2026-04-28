@@ -1,6 +1,6 @@
 ---
 name: just
-description: Use only when the user explicitly invokes just-mode or asks to skip ceremony, avoid research, avoid planning, avoid extra skills, avoid TODOs, stop overthinking, or directly execute a simple requested action. Do not use by default or infer it from ordinary tasks.
+description: Use only when the user explicitly invokes just-mode or asks to skip ceremony, avoid research, avoid planning, avoid extra skills, avoid subagents, avoid explore agents, avoid TODOs, stop overthinking, or directly execute a simple requested action. Do not use by default or infer it from ordinary tasks.
 ---
 
 # Just
@@ -27,12 +27,13 @@ Do not activate this skill merely because the task looks simple. If the user did
 When active:
 
 1. Do not brainstorm, write specs, enter plan mode, or create TODO lists.
-2. Do not ask clarifying questions unless the request is impossible or dangerous without one.
-3. Do not invoke other process skills unless required by a higher-priority system/developer rule.
-4. Read only the files or state needed to make the requested change.
-5. Make the smallest change that satisfies the request.
-6. Verify with the fastest command that proves the change worked.
-7. Report only what changed and the verification result.
+2. Do not dispatch subagents, Explore agents, research agents, review agents, or parallel agents.
+3. Do not perform broad codebase exploration; inspect only the exact files, commands, or state needed for the task.
+4. Do not ask clarifying questions unless the request is impossible or dangerous without one.
+5. Do not invoke other process skills unless required by a higher-priority system/developer rule.
+6. Make the smallest change that satisfies the request.
+7. Verify with the fastest command that proves the change worked.
+8. Report only what changed and the verification result.
 
 ## Safety Boundary
 
@@ -67,4 +68,6 @@ Avoid long explanations, alternatives, design discussion, or summaries of obviou
 | Creating a plan or TODO list | Directly edit or execute |
 | Asking preference questions | Pick the obvious minimal path |
 | Invoking every relevant skill | Suppress process skills unless higher-priority rules force them |
+| Dispatching subagents or Explore agents | Work in the current agent with targeted reads/searches only |
+| Starting broad codebase discovery | Use the narrowest file read or search needed |
 | Reporting a long narrative | Give changed/result only |
